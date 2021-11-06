@@ -1,0 +1,83 @@
+<app-block-space layout="divider-xs"></app-block-space>
+
+<app-block-slideshow
+    [slides]="[
+        {
+            url: '/shop',
+            desktopImage: 'assets/images/slides/1.png',
+            mobileImage: 'assets/images/slides/1.png',
+            offer: '',
+            title: 'Doors and Drawer Fronts',
+            details: 'Manufacturing Custom Cabinet Doors and others for 27 years and Counting ...',
+            buttonLabel: 'Contact Us'
+        },
+        {
+            url: '/shop',
+            desktopImage: 'assets/images/slides/2.png',
+            mobileImage: 'assets/images/slides/2.png',
+            title: 'Moldings And Trims',
+            details: 'Precise, On time, Quality and Service for 27 years and Counting ...',
+            buttonLabel: 'Contact Us'
+        },
+        {
+            url: '/shop',
+            desktopImage: 'assets/images/slides/3.png',
+            mobileImage: 'assets/images/slides/3.png',
+            title: 'Finishes',
+            details: 'Helping Customers with Innovate and Creative Solutions.',
+            buttonLabel: 'Contact Us'
+        },
+        {
+            url: '/shop',
+            desktopImage: 'assets/images/slides/4.png',
+            mobileImage: 'assets/images/slides/4.png',
+            title: 'Accessories And Hardware',
+            details: 'We are your Factory Direct Partner.',
+            buttonLabel: 'Contact Us'
+        }
+    ]"
+></app-block-slideshow>
+
+<app-block-space layout="divider-nl"></app-block-space>
+
+<app-block-brands layout="columns-8-full" [brands]="(brands$|async) || []"></app-block-brands>
+
+<app-block-space layout="divider-nl"></app-block-space>
+
+<app-block-categories
+    [blockTitle]="'HEADER_POPULAR_CATEGORIES'|translate"
+    [categories]="(popularCategories$|async) || []"
+></app-block-categories>
+
+<app-block-space layout="divider-nl"></app-block-space>
+
+<app-block-products-carousel
+    [blockTitle]="'HEADER_FEATURED_PRODUCTS'|translate"
+    layout="grid-5"
+    [rows]="1"
+    [loading]="this.featuredProducts.loading"
+    [products]="(this.featuredProducts.products$|async) || []"
+    [groups]="this.featuredProducts.groups"
+    (changeGroup)="groupChange(featuredProducts, $event)"
+></app-block-products-carousel>
+
+<app-block-space layout="divider-nl"></app-block-space>
+
+
+<app-block-space layout="divider-nl"></app-block-space>
+
+<app-block-posts-carousel
+    [label]="'HEADER_LATEST_NEWS'|translate"
+    layout="list"
+    [loading]="latestPosts.loading"
+    [posts]="(latestPosts.data$|async) || []"
+    [links]="[
+        {label: 'Special Offers', url: '/blog'},
+        {label: 'New Arrivals', url: '/blog'},
+        {label: 'Reviews', url: '/blog'}
+    ]"
+></app-block-posts-carousel>
+
+<app-block-space layout="divider-nl"></app-block-space>
+
+
