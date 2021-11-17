@@ -67,15 +67,10 @@
 <app-block-space layout="divider-nl"></app-block-space>
 
 <app-block-posts-carousel
-    [label]="'HEADER_LATEST_NEWS'|translate"
+    [label]="'HEADER_TESTIMONIALS'|translate"
     layout="list"
     [loading]="latestPosts.loading"
     [posts]="(latestPosts.data$|async) || []"
-    [links]="[
-        {label: 'Special Offers', url: '/blog'},
-        {label: 'New Arrivals', url: '/blog'},
-        {label: 'Reviews', url: '/blog'}
-    ]"
 ></app-block-posts-carousel>
 
 <app-block-space layout="divider-nl"></app-block-space>

@@ -39,7 +39,7 @@ namespace USCustomizedApi.Services
       {
         Slug = t.CategoryName.Replace(" ", ""),
         Name = t.CategoryName,
-        Image = GetImagePath(_context.ProductImages.FirstOrDefault(pi => pi.ImageTypeId == 2 && pi.ProductId == _context.Products.Where(p => p.CategoryId == _context.Categories.Where(c => c.ParentId == t.Id).OrderBy(cc=>Guid.NewGuid()).FirstOrDefault().Id).FirstOrDefault().Id).Path),
+        Image = GetImagePath(_context.ProductImages.FirstOrDefault(pi => !pi.IsDrawing && pi.ProductId == _context.Products.Where(p => _context.Categories.Where(c => c.ParentId == t.Id && c.Id == p.CategoryId).OrderBy(cc => Guid.NewGuid()).Any(d => d.Id == p.CategoryId)).OrderBy(cc => Guid.NewGuid()).FirstOrDefault().Id).Path),
         Children = _context.Categories.Where(c => c.ParentId == t.Id).Select(cc => new CategoriesViewModel { Name = cc.CategoryName }).AsEnumerable()
       });
     }

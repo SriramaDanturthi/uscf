@@ -1,12 +1,8 @@
-using System.Collections.Generic;
-
-namespace USCustomizedApi.ViewModels
+namespace USCustomizedApi.ViewModels;
+public class CategoriesViewModel
 {
-  public class CategoriesViewModel
-  {
-    public string Slug { get; set; }
-    public string Name {  get; set; }
-    public string Image { get; set; }
-    public IEnumerable<CategoriesViewModel> Children {  get; set; }
-  }
+  public string Slug { get; set; }
+  public string Name { get; set; }
+  public string Image { get; set; }
+  public IEnumerable<CategoriesViewModel> Children { get; set; }
 }
