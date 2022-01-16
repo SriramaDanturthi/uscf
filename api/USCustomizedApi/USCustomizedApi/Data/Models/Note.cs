@@ -1,7 +1,5 @@
-namespace USCustomizedApi.Data.Models
+namespace USCustomizedApi.Data.Models;
+public class Note : BaseModel
 {
-  public class Note : BaseModel
-  {
-    public string Notes { get; set; }
-  }
+  public string Notes { get; set; }
 }

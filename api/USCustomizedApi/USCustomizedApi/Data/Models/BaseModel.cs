@@ -1,8 +1,6 @@
-namespace USCustomizedApi.Data.Models
+namespace USCustomizedApi.Data.Models;
+public class BaseModel
 {
-  public class BaseModel
-  {
-    public int Id {  get; set; }
-    public bool IsActive { get; set; }
-  }
+  public int Id { get; set; }
+  public bool IsActive { get; set; }
 }

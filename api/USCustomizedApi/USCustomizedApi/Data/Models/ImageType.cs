@@ -1,8 +1,6 @@
-namespace USCustomizedApi.Data.Models
+namespace USCustomizedApi.Data.Models;
+public class ImageType : BaseModel
 {
-  public class ImageType : BaseModel
-  {
-    public string Type { get; set; }
-    public string Description {  get; set; }
-  }
+  public string Type { get; set; }
+  public string Description { get; set; }
 }

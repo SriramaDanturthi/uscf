@@ -1,7 +1,5 @@
-namespace USCustomizedApi.Data.Models
+namespace USCustomizedApi.Data.Models;
+public class Property : BaseModel
 {
-  public class Property : BaseModel
-  {
-    public string PropertyName {  get; set; }
-  }
+  public string PropertyName { get; set; }
 }
